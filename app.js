@@ -9,7 +9,11 @@ const app = Vue.createApp({
     methods: {
         changeTitleToLowerCase(){
             this.title= this.title.toLowerCase()
+        },
+        signByMe(signer) {
+            this.title=this.title + " signed by " + signer
         }
+
     }
 })
 
