@@ -9,7 +9,14 @@
 <body>
     <h1> Hello, vue :) </h1>
     <div id="app">
-        <h2> I am template now </h2>
+        <h2> My book app</h2>
+        <p>Title :- {{title}}</p>
+        <p> author :- {{author}} </p>
+        <p> age :- {{age}}</p>
+        <button v-on:click="age++">Increse age</button>
+        <button v-on:click="age--">Decrease age</button>
+        <button v-on:click="title= title.toUpperCase()">Title upper case</button>
+        <button @click="changeTitleToLowerCase">Title lower case</button>
     </div>
 
 <script src="app.js"> </script>
