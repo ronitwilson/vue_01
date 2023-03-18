@@ -29,6 +29,10 @@
             <button v-on:click="title= title.toUpperCase()">Title upper case</button>
             <button @click="changeTitleToLowerCase">Title lower case</button>
             <button @click="signByMe('Ronit')">Sign by Ronit</button>
+            <h2>Other books</h2>
+                <div v-for="book in books">
+                    <p> {{book.title}} {{book.author}}</p>
+                </div>
         </div>
             <button @click="toggleShowBook">
                 <span v-if="showBook"> Hide book info </span>

@@ -6,7 +6,12 @@ const app = Vue.createApp({
             age: 45,
             showBook: true,
             x:0,
-            y:0
+            y:0,
+            books: [
+                {"title": "The book 0.1", "author": "Ronit"},
+                {"title": "The book of the day", "author": "Ronit"},
+                {"title": "The book of the morning", "author": "Ronit"}
+            ]
         }
     },
     methods: {
