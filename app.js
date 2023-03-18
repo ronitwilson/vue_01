@@ -4,7 +4,9 @@ const app = Vue.createApp({
             title: "the final empire",
             author: "The new author",
             age: 45,
-            showBook: true
+            showBook: true,
+            x:0,
+            y:0
         }
     },
     methods: {
@@ -16,8 +18,20 @@ const app = Vue.createApp({
         },
         toggleShowBook(){
             this.showBook = !this.showBook
-        }
+        },
 
+        handleMouseOverEvent(arg, e){
+            console.log("mouse over event")
+            console.log("printing arg ", arg)
+            console.log("printing event ", e)
+        },
+    
+        handleMouseMove(e){
+            console.log("mouse over event")
+            console.log("event type is ", e.type)
+            this.x = e.offsetX
+            this.y = e.offsetY
+        }
     }
 })
 

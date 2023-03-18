@@ -24,6 +24,13 @@
                 <span v-if="showBook"> Hide book info </span>
                 <span v-else> Show book info </span>
             </button>
+
+        <br>
+        <!-- mouse events -->
+        <div class="box" @mouseover="handleMouseOverEvent('sample arg', $event)">mouseover enter</div>
+        <div class="box">mouseover leave</div>
+        <div class="box">mouse double click</div>
+        <div class="box" @mousemove="handleMouseMove">position is {{x}} and {{y}}</div>
     </div>
 
 <script src="app.js"> </script>
