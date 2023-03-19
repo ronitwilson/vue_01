@@ -14,6 +14,9 @@
             margin: 20px;
             display: inline-block;
         }
+        span.fav{
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -31,7 +34,7 @@
             <button @click="signByMe('Ronit')">Sign by Ronit</button>
             <h2>Other books</h2>
                 <div v-for="book in books">
-                    <p> {{book.title}} {{book.author}}</p>
+                    <p> <SPAN :class="{fav: book.isFav}">{{book.title}}</SPAN> authored by {{book.author}}</p>
                 </div>
         </div>
             <button @click="toggleShowBook">

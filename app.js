@@ -8,9 +8,9 @@ const app = Vue.createApp({
             x:0,
             y:0,
             books: [
-                {"title": "The book 0.1", "author": "Ronit"},
-                {"title": "The book of the day", "author": "Ronit"},
-                {"title": "The book of the morning", "author": "Ronit"}
+                {"title": "The book 0.1", "author": "Ronit", "isFav":false},
+                {"title": "The book of the day", "author": "Ronit", "isFav":false},
+                {"title": "The book of the morning", "author": "Ronit", "isFav":true}
             ]
         }
     },
