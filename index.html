@@ -34,7 +34,9 @@
             <button @click="signByMe('Ronit')">Sign by Ronit</button>
             <h2>Other books</h2>
                 <div v-for="book in books">
-                    <p> <SPAN :class="{fav: book.isFav}">{{book.title}}</SPAN> authored by {{book.author}}</p>
+                    <p> <SPAN :class="{fav: book.isFav}">{{book.title}}</SPAN> authored by {{book.author}}
+                    <!-- <img :src="book.src" alt="a to"></img> -->
+                    </p>
                 </div>
         </div>
             <button @click="toggleShowBook">
