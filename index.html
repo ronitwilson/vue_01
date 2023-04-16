@@ -1,57 +1,59 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning Vue</title>
-    <script src="https://unpkg.com/vue@3.0.2"></script>
-    <style>
-        .box {
-            padding: 100px 0;
-            width: 400px;
-            text-align: center;
-            background: #ddd;
-            margin: 20px;
-            display: inline-block;
-        }
-        span.fav{
-            font-weight: bold;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Vue</title>
+  <script src="https://unpkg.com/vue@3.0.0"></script>
+  <style>
+    body{
+      background: #eee;
+      max-width: 960px;
+      margin: 20px auto;
+    }
+    p, h3, ul{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      list-style-type: none;
+      background: #fff;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    li.fav{
+      background: #ff9ed2;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-    <h1> Hello, vue :) </h1>
-    <div id="app">
-        <h2> My book app</h2>
-        <div v-if="showBook">
-            <p>Title :- {{title}}</p>
-            <p> author :- {{author}} </p>
-            <p> age :- {{age}}</p>
-            <button v-on:click="age++">Increse age</button>
-            <button v-on:click="age--">Decrease age</button>
-            <button v-on:click="title= title.toUpperCase()">Title upper case</button>
-            <button @click="changeTitleToLowerCase">Title lower case</button>
-            <button @click="signByMe('Ronit')">Sign by Ronit</button>
-            <h2>Other books</h2>
-                <div v-for="book in books">
-                    <p> <SPAN :class="{fav: book.isFav}">{{book.title}}</SPAN> authored by {{book.author}}
-                    <!-- <img :src="book.src" alt="a to"></img> -->
-                    </p>
-                </div>
-        </div>
-            <button @click="toggleShowBook">
-                <span v-if="showBook"> Hide book info </span>
-                <span v-else> Show book info </span>
-            </button>
+  <h1>Hello, Vue :)</h1>
 
-        <br>
-        <!-- mouse events -->
-        <div class="box" @mouseover="handleMouseOverEvent('sample arg', $event)">mouseover enter</div>
-        <div class="box">mouseover leave</div>
-        <div class="box">mouse double click</div>
-        <div class="box" @mousemove="handleMouseMove">position is {{x}} and {{y}}</div>
+  <div id="app">
+    <div v-if="showBooks">
+      <ul>
+        <li v-for="book in books" :class="{ fav: book.isFav }" >
+          <img :src="book.img" :alt="book.title">
+          <h3>{{ book.title }}</h3>
+          <p>{{ book.author }}</p>
+        </li>
+      </ul>
     </div>
+    <div v-else>
+      <p>Click the button below to show books</p>
+    </div>
+    
+    <button @click="toggleShowBooks">
+      <span v-if="showBooks">Hide books</span>
+      <span v-else>Show books</span>
+    </button>
+  </div>
 
-<script src="app.js"> </script>
+
+  <script src="app.js"></script>
 </body>
 </html>
