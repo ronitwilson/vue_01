@@ -13,8 +13,10 @@ const app = Vue.createApp({
       toggleShowBooks() {
         this.showBooks =  !this.showBooks
       },
-      toogleColour() {
-        
+      toogleFavBook() {
+        this.books.forEach(book => {
+          book.isFav = ! book.isFav
+        });
       }
     }
   })
